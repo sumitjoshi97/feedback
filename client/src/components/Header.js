@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
-
+import Payments from "./Payments";
 class Header extends Component {
     renderContent() {
         switch (this.props.auth) {
@@ -12,9 +12,16 @@ class Header extends Component {
                     <a href="/auth/google">Login With Google</a>
                 </li>;
             default:
-                return <li>
-                    <a href="/api/logout">Logout</a>
-                </li>;
+                return (
+                    <div>
+                        <li><Payments/></li>
+                        <li>
+                            <a href="/api/logout">Logout</a>
+                        </li>
+                    </div>
+
+                )
+
         }
     }
 
@@ -39,9 +46,7 @@ class Header extends Component {
 }
 
 const mapStateToProps = state => {
-    return {
-        auth: state.auth.auth
-    }
+    return {auth: state.auth.auth}
 }
 
 export default connect(mapStateToProps)(Header);
