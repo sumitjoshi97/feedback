@@ -20,21 +20,21 @@ class App extends Component {
         return (
             <div className="container">
                 <Header/>
-                <Switch>
-                    {/* <Route path='/dashboard' component={Dashboard}/>
+                {/* <Switch>
+                    <Route path='/dashboard' component={Dashboard}/>
                 <Route path='/survey' component={Survey}/>
-                <Route path='/' exact component={Landing}/> */}
-                </Switch>
+                <Route path='/' exact component={Landing}/>
+                </Switch> */}
             </div>
         )
     }
 }
 
-const mapStateToProps = state => {
-    return {
+// const mapStateToProps = state => {
+//     return {
 
-    }
-}
+//     }
+// }
 
 const mapDispatchToProps = dispatch => {
     return {

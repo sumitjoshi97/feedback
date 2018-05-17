@@ -1,18 +1,16 @@
 import axios from 'axios';
 import * as actionTypes from './types';
 
-export const fetchUsers = (data) => {
+export const fetchUser = (data) => {
     return {
-        type: actionTypes.FETCH_USERS,
+        type: actionTypes.FETCH_USER,
         payload: data
     }
 }
 
 export const fetchApi = () => {
-    return dispatch => {
-        axios.get('/api/current_user')
-            .then(res => {
-                dispatch(fetchUsers(res))
-            })
+    return async dispatch => {
+        const res = await axios.get('/api/current_user');
+        dispatch(fetchUser(res));
     }
 }
