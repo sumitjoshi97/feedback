@@ -25,14 +25,11 @@ class App extends Component {
         return (
             <div className="container">
                 <Header/>
-                <Route exact path="/" component={Landing} />
-                <Route exact path="/surveys" component={Dashboard} />
-                <Route path="/surveys/new" component={SurveyNew} />
-                {/* <Switch>
-                    <Route path='/dashboard' component={Dashboard}/>
-                <Route path='/survey' component={Survey}/>
-                <Route path='/' exact component={Landing}/>
-                </Switch> */}
+                <Switch>
+                    <Route exact path="/" component={Landing} />
+                    <Route exact path="/surveys" component={Dashboard} />
+                    <Route path="/surveys/new" component={SurveyNew} />
+                </Switch>
             </div>
         )
     }
