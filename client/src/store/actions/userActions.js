@@ -11,7 +11,13 @@ export const fetchUser = (data) => {
 export const fetchApi = () => {
     return async dispatch => {
         const res = await axios.get('/api/current_user');
-        console.log(res.data);
+        dispatch(fetchUser(res.data));
+    }
+}
+
+export const handleToken = (token) => {
+    return async dispatch => {
+        const res = await axios.post('/api/stripe', token);
         dispatch(fetchUser(res.data));
     }
 }
