@@ -4,6 +4,7 @@ import {Link} from 'react-router-dom';
 import Payments from "./Payments";
 class Header extends Component {
     renderContent() {
+        console.log(this.props.auth)
         switch (this.props.auth) {
             case null:
                 return <li>nothing</li>
@@ -15,6 +16,9 @@ class Header extends Component {
                 return (
                     <div>
                         <li><Payments/></li>
+                        <li>
+                            Credits: {this.props.auth.credits}
+                        </li>
                         <li>
                             <a href="/api/logout">Logout</a>
                         </li>
