@@ -35,16 +35,6 @@ class App extends Component {
     }
 }
 
-// const mapStateToProps = state => {
-//     return {
-
-//     }
-// }
-const mapStateToProps = state => {
-    return {
-        auth: state.auth.auth
-    }
-}
 const mapDispatchToProps = dispatch => {
     return {
         onFetchUser: () => dispatch(actions.fetchApi())
