@@ -1,13 +1,14 @@
 import React, {Component} from 'react';
 
 // importing react router
-import {Route, Switch} from 'react-router-dom';
+import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 
 // importing component
 import Header from './Header';
 import Landing from './Landing';
 import Dashboard from './Dashboard';
 import SurveyNew from './SurveyNew/SurveyNew'; 
+
 // import Survey from './Survey';
 import {connect} from 'react-redux';
 import * as actions from '../store/actions/index';
@@ -23,13 +24,16 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <Header/>
-                <Switch>
+                <Router>    
+                    <div>
+                    <Header/>
                     <Route exact path="/" component={Landing} />
-                    <Route path="/surveys/new" exact component={SurveyNew} />
+                    <Route path="/surveys/new" component={SurveyNew} />
                     <Route exact path="/surveys" component={Dashboard} />
+                    </div>
                     
-                </Switch>
+                </Router>
+                
             </div>
         )
     }
@@ -42,5 +46,3 @@ const mapDispatchToProps = dispatch => {
 }
 
 export default connect(null, mapDispatchToProps)(App);
-
-// export default connect(null, actions)(App);
