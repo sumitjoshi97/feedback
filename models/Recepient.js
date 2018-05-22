@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
-const recepientSchema = Schema({
+const recepientSchema = new Schema({
     email: String,
     responded: {type: Boolean, default: false}
 });
