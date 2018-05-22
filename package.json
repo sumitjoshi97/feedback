@@ -4,9 +4,11 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
+    "start": "node index.js",
     "server": "nodemon index.js",
     "client": "npm run start --prefix client",
-    "start": "concurrently \"yarn run server\" \"yarn run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "webhook": "lt- -p 5000 sumitasdasd"
   },
   "dependencies": {
     "body-parser": "^1.18.3",
@@ -14,6 +16,7 @@
     "cookie-session": "^2.0.0-beta.3",
     "eslint": "^4.19.1",
     "express": "^4.16.3",
+    "localtunnel": "^1.9.0",
     "mongoose": "^5.1.1",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
