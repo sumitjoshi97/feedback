@@ -1,3 +1,4 @@
 export {
-    fetchApi
+    fetchApi,
+    submitSurvey
 } from './userActions';
