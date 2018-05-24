@@ -8,8 +8,8 @@ class Mailer extends helper.Mail {
     constructor({subject, recipients}, content) {
         super();
 
-        this.sgApi = sendgrid(keys.emailKey);
-        this.form_email = new helper.Email('no-reply@emaily.com');
+        this.sgApi = sendgrid(keys.sendGridKey);
+        this.from_email = new helper.Email('no-reply@emaily.com');
         this.subject = subject;
         this.body = new helper.Content('text/html', content);
         this.recipients = this.formatAddresses(recipients);
