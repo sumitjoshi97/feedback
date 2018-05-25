@@ -6,7 +6,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case actionTypes.FETCH_USER: 
+        case actionTypes.FETCH_USER:
             return {
                 ...state,
                 auth: action.payload || false

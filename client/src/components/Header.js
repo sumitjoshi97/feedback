@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import Payments from "./Payments";
+
 class Header extends Component {
     renderContent() {
-        console.log(this.props.auth)
         switch (this.props.auth) {
             case null:
                 return <li>nothing</li>
