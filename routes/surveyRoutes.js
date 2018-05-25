@@ -12,13 +12,19 @@ const Survey = mongoose.model('surveys');
 
 module.exports = app => {
 
-    app.get('/api/surveys/thanks', (req, res) => {
-        res.send('Thanks for voting!');
-    });
-    // 
+    //showing all the created survey records for logged user - GET route
+    app.get('/api/surveys', requireLogin, async (req, res) => {
+        const surveys = await Survey.find({ _user: req.user.id })
+            .select({recipients: false, });
+
+        res.send(surveys);
+    })
+
+    //creating a survey and send mail - POST route
     app.post('/api/surveys', requireLogin, requireCredits, async(req, res) => {
         const {title, subject, body, recipients} = req.body;
-        console.log(req.body);
+
+        // survey object from Survey schema
         const survey = new Survey({
             title,
             subject,
@@ -29,9 +35,8 @@ module.exports = app => {
             _user: req.user.id,
             dateSent: Date.now()
         }); 
-        console.log(survey);
 
-        // Great place to send an email!
+        // send an email!
         const mailer = new Mailer(survey, surveyTemplate(survey));
         console.log(mailer);
         try {
@@ -46,16 +51,44 @@ module.exports = app => {
         }
     });
 
-     app.post('/api/surveys/webhooks', (req, res) => {
-        const events = _.map(req.body, ({email, url}) => {
-            const pathname = new URL(url).pathname;
-            const p = new Path('/api/surveys/:surveyId/:choice');
-            console.log(p.test(pathname));
-
-            match = p.test(pathname);
-            if (match) {
-                return {email, surveyId: match.surveyId, choice: match.choice};
-            }
-        });
+    //response get route for survey clicked from mail
+    app.get('/api/surveys/:surveyId/:choice', (req, res) => {
+        res.send('Thanks for voting!');
     });
+
+    // webhook route
+     app.post('/api/surveys/webhooks', (req, res) => {
+
+         const p = new Path('/api/surveys/:surveyId/:choice');
+
+         const events = _.chain(req.body)
+             .map(({email, url}) => {
+                 match = p.test(new URL(url).pathname);
+                 if (match) {
+                     return {
+                         email,
+                         surveyId: match.surveyId,
+                         choice: match.choice
+                     };
+                 }
+             })
+             .compact()
+             .uniqBy('email', 'surveyId')
+             .each(({email, surveyId, choice}) => {
+                 Survey.updateOne({
+                     _id: surveyId,
+                     recipients: {
+                         $elemMatch: {email, responded: false}
+                     }
+                 },
+                {
+                    $inc: { [choice]: 1 },
+                    $set: { 'recipients.$.responded': true },
+                    lastResponded: new Date()
+                }).exec();
+             })
+             .value();
+
+         res.send({});
+     });
 }
