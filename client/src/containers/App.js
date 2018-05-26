@@ -7,7 +7,7 @@ import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 import Header from './Header/Header';
 import Landing from '../components/Landing/Landing';
 import Dashboard from '../components/Dashboard/Dashboard';
-import SurveyNew from './Surveys/SurveyNew/SurveyNew'; 
+import SurveyNew from './Surveys/SurveyNew/SurveyNew';
 
 // import Survey from './Survey';
 import {connect} from 'react-redux';
@@ -24,16 +24,18 @@ class App extends Component {
     render() {
         return (
             <div >
-                <Router>    
+                <Router>
                     <div>
-                    <Header/>
-                    <Route exact path="/" component={Landing} />
-                    <Route path="/surveys/new" component={SurveyNew} />
-                    <Route exact path="/surveys" component={Dashboard} />
+                        <Header/>
+                        <Switch>
+                            <Route exact path="/" component={Landing}/>
+                            <Route path="/surveys/new" component={SurveyNew}/>
+                            <Route exact path="/surveys" component={Dashboard}/>
+                        </Switch>
                     </div>
-                    
+
                 </Router>
-                
+
             </div>
         )
     }
