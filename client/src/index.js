@@ -2,7 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/App';
 
-import 'materialize-css/dist/css/materialize.min.css';
+import './index.css';
+// import 'materialize-css/dist/css/materialize.min.css';
 
 import {createStore, applyMiddleware, compose} from 'redux';
 import {Provider} from 'react-redux'
@@ -17,9 +18,7 @@ const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
 
 const app = (
     <Provider store={store}>
-       
-            <App/>
-       
+        <App/>
     </Provider>
 );
 
