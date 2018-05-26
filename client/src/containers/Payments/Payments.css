@@ -1,0 +1,12 @@
+.btn {
+    font-size: 2rem;
+    outline: none;
+    background-color: #fff;
+    color: #000;
+    font-weight: 700;
+    border: transparent;
+}
+
+.btn:hover {
+    cursor: pointer;
+}
