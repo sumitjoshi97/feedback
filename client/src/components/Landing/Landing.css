@@ -1,0 +1,42 @@
+.landing {
+    color: #000;
+    padding-top: 15rem; 
+    position: relative;
+}
+
+.landing-content {
+    display: inline-block;
+    z-index: 10
+}
+
+.landing-content__heading {
+    font-size: 15rem;
+    padding-top: 4rem;
+}
+
+.landing-content__text {
+    max-width: 77%;
+    margin: 1rem;
+}
+
+.landing-content__para {
+    font-size: 2.5rem; 
+    font-weight: 700;   
+}
+
+.landing-content__list {
+    list-style: none;
+    margin-top: 4rem;
+}
+
+.landing-content__list li {
+    margin-bottom: 1.2rem;
+}
+
+.landing-image {
+    max-width: 70%;
+    position: absolute;
+    right: 0;
+    z-index: -1;
+    transform: scaleX(-1)
+}
