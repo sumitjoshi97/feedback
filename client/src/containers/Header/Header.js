@@ -3,45 +3,44 @@ import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 
 import Payments from "../Payments/Payments";
+import './Header.css';
 
 class Header extends Component {
     renderContent() {
         switch (this.props.auth) {
             case null:
-                return <li>nothing</li>
+                return <li className="header-nav__link nothing">nothing</li>
             case false:
-                return <li>
-                    <a href="/auth/google">Login With Google</a>
-                </li>;
+                return <li className="header-nav__link">
+                            <a className="link" href="/auth/google">Login With Google</a>
+                        </li>;
             default:
                 return (
-                    <div>
-                        <li><Payments/></li>
-                        <li>
+                    <div className="header-nav__items">
+                        <li className="header-nav__link"><Payments/></li>
+                        <li className="header-nav__link">
                             Credits: {this.props.auth.credits}
                         </li>
-                        <li>
-                            <a href="/api/logout">Logout</a>
+                        <li className="header-nav__link">
+                            <a className="link" href="/api/logout">Logout</a>
                         </li>
                     </div>
-
                 )
-
         }
     }
 
     render() {
         return (
-            <nav>
-                <div className="nav-wrapper">
+            <nav className="nav">
+                <div className="header">
                     <Link
                         to={this.props.auth
                         ? '/surveys'
                         : '/'}
-                        className="left brand-logo">
+                        className="header-logo">
                         Emaily
                     </Link>
-                    <ul className="right">
+                    <ul className="header-nav">
                         {this.renderContent()}
                     </ul>
                 </div>

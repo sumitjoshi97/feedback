@@ -5,6 +5,8 @@ import {connect} from 'react-redux';
 import * as actions from '../../store/actions/index';
 import { handleToken } from '../../store/actions/userActions';
 
+import './Payments.css';
+
 class Payments extends Component {
     render() {
         return (
