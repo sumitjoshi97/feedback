@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import {connect} from 'react-redux';
 
 import * as actions from '../../../store/actions/index';
+import './SurveyList.css';
 
 class SurveyList extends Component {
 
@@ -12,17 +13,17 @@ class SurveyList extends Component {
     renderSurveys = () => {
         return this.props.surveys.reverse().map(survey => {
             return (
-                <div className="card " key={survey._id}>
-                    <div className="card-content">
-                        <span className="card-title">{survey.title}</span>
+                <div className="survey" key={survey._id}>
+                    <div className="survey__content">
+                        <span className="survey__heading">{survey.title}</span>
                         <p>
                             {survey.body}
                         </p>
-                        <p className="right">
+                        <p className="survey__date">
                             Sent on: <span>{new Date(survey.dateSent).toLocaleDateString()}</span>
                         </p>
                     </div>
-                    <div className="action">
+                    <div className="survey__actions">
                         <a>Yes: {survey.yes}</a>
                         <a>No: {survey.no}</a>
                     </div>
@@ -33,9 +34,12 @@ class SurveyList extends Component {
 
     render() {
         return (
-            <div>
-                Surveys
-                {this.renderSurveys()}
+            <div className="surveys">
+                <h2 className="surveys-heading">Your Surveys</h2>
+                <div className="surveyList">
+                    {this.renderSurveys()}
+                </div>
+                
             </div>
         )
     }
