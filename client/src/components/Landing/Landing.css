@@ -1,6 +1,6 @@
 .landing {
     color: #000;
-    padding-top: 15rem; 
+    padding-top: 15rem;     
     position: relative;
 }
 
@@ -33,10 +33,37 @@
     margin-bottom: 1.2rem;
 }
 
+.landing-content__list li:last-of-type{
+    margin-bottom: 5rem;
+}
+
 .landing-image {
     max-width: 70%;
     position: absolute;
     right: 0;
     z-index: -1;
-    transform: scaleX(-1)
+    transform: scaleX(-1);
+}
+
+.btn-inline {
+    text-decoration: none;
+    color: #000;
+    border: #000 1px solid;
+    box-shadow: 0 1rem 2rem rgba(0,0,0,0.1);
+    margin: 1rem;
+    
+    padding: 1rem 3rem;
+    box-sizing: content-box;
+
+    transition: border-radius 1s ease-in-out;
+}
+
+.btn-inline:hover {
+    color: #fff;
+    border-radius: 100px;
+    background-color: #000;
+}
+
+.btn-inline:focus {
+    transform: translateY(2px);
 }
