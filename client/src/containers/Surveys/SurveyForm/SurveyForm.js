@@ -5,34 +5,31 @@ import _ from 'lodash';
 
 import SurveyField from '../../../components/SurveyField/SurveyField';
 import validateEmails from '../../../utils/validateEmails';
+import formFields from '../../../utils/formFields';
 
+import './SurveyForm.css';
 
-const FIELDS = [
-    {label: 'Survey Title', name: 'title'},
-    {label: 'Subject', name: 'subject'},
-    {label: 'Body', name: 'body'},
-    {label: 'Recipients', name: 'recipients'}
-]
 
 class SurveyForm extends Component {
 
     renderFields = () => {
-        return _.map(FIELDS,({label, name}, index)=> {
+        return _.map(formFields,({label, name}, index)=> {
             return <Field key={index} component={SurveyField} type="text" label={label} name={name} />
         })        
     }
 
-
     render() {
         return (
             <div>
-                <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)}>
-                {this.renderFields()}
-                <Link to="/surveys" className="btn-flat red">Cancel</Link>
-                <button type="submit" className="teal right btn-flat">Next<i className="material-icons right">done</i>  </button>
+                <form onSubmit={this.props.handleSubmit(this.props.onSurveySubmit)} className="form">
+                    {this.renderFields()}
+                    <div className="row">
+                        <Link to="/surveys" className="btn-cancel">Cancel</Link>
+                    </div>
+                
+                    <button type="submit" className="btn-submit">Next</button>
                 </form>
             </div>
-            
         )
     }
 }
@@ -40,7 +37,7 @@ class SurveyForm extends Component {
 function validate (values) {
     const errors = {};
 
-    _.each(FIELDS, ({name}) => {
+    _.each(formFields, ({name}) => {
         if (!values[name]){
             errors[name]=`You must provide a ${name} value`;
         }
