@@ -33,11 +33,7 @@ class Header extends Component {
         return (
             <nav className="nav">
                 <div className="header">
-                    <Link
-                        to={this.props.auth
-                        ? '/surveys'
-                        : '/'}
-                        className="header-logo">
+                    <Link to="/" className="header-logo">
                         Emaily
                     </Link>
                     <ul className="header-nav">
