@@ -3,6 +3,7 @@ import {reduxForm} from 'redux-form';
 
 import SurveyForm from '../SurveyForm/SurveyForm';
 import SurveyFormReview from '../SurveyFormReview/SurveyFormReview';
+import './SurveyNew.css';
 
 class SurveyNew extends Component {
     state = {
@@ -21,7 +22,8 @@ class SurveyNew extends Component {
 
     render() {
         return (
-            <div>
+            <div class="survey-form">
+            <h2 className="surveys-heading">New Survey</h2>
                 {this.renderContent()}
             </div>
         )

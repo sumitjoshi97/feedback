@@ -1,0 +1,52 @@
+.form {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.row {
+    display: inline-block;
+    margin-top: 1rem;
+}
+
+.btn-cancel {
+    text-decoration: none;
+    color: #000;
+    border: 1px #000 solid;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    background-color: #fff;
+    display: inline;
+}
+
+.btn-cancel:hover {
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn-cancel:focus {
+    outline: none;
+}
+
+.btn-submit {
+    position: absolute;
+    right: 0;
+    background-color: #000;
+    color: #fff;
+    border: 1px #000 solid;
+    border-radius: 5px;
+    padding: 1rem 2rem;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.btn-submit:hover {
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.btn-submit:focus {
+    outline: none;
+}
