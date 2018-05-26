@@ -1,0 +1,22 @@
+.dashboard {
+    padding-top: 12rem; 
+}
+
+.btn-fixed {
+    position: fixed;
+    height: 5rem;
+    width: 5rem;
+    font-size: 1rem;
+    bottom: 0;
+    right: 0;
+    margin: 2rem;
+    padding: 1rem;
+    border: 2px #000 solid;
+    border-radius: 50px;
+}
+
+.btn-fixed:hover {
+    border: transparent;
+    transform: translateY(-4px);
+    fill: aqua;
+}
