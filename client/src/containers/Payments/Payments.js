@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import {connect} from 'react-redux';
-import * as actions from '../store/actions/index';
-import { handleToken } from '../store/actions/userActions';
+
+import * as actions from '../../store/actions/index';
+import { handleToken } from '../../store/actions/userActions';
 
 class Payments extends Component {
     render() {

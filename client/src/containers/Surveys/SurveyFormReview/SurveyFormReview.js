@@ -2,9 +2,11 @@
 import _ from 'lodash';
 import React from 'react';
 import {connect} from 'react-redux';
-import formFields from './formFields';
+
 import {withRouter} from 'react-router-dom';
-import * as actions from '../../../../store/actions/index';
+
+import formFields from '../../../utils/formFields';
+import * as actions from '../../../store/actions/index';
 
 const SurveyFormReview = (props) => {
   console.log(props.formValues);

@@ -4,10 +4,10 @@ import React, {Component} from 'react';
 import {Route, Switch, BrowserRouter as Router} from 'react-router-dom';
 
 // importing component
-import Header from './Header';
-import Landing from './Landing';
-import Dashboard from './Dashboard';
-import SurveyNew from './SurveyNew/SurveyNew'; 
+import Header from './Header/Header';
+import Landing from '../components/Landing/Landing';
+import Dashboard from '../components/Dashboard/Dashboard';
+import SurveyNew from './Surveys/SurveyNew/SurveyNew'; 
 
 // import Survey from './Survey';
 import {connect} from 'react-redux';
