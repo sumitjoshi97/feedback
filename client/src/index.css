@@ -24,7 +24,8 @@ body {
     font-size: 1.8rem;
     font-family: 'Ubuntu', sans-serif;
     color: #000;
-    margin: 0 15rem;
+    width: 80%;
+    margin: 0 auto;
 }
 
 ::selection{
