@@ -22,7 +22,7 @@ class SurveyNew extends Component {
 
     render() {
         return (
-            <div class="survey-form">
+            <div className="survey-form">
             <h2 className="surveys-heading">New Survey</h2>
                 {this.renderContent()}
             </div>

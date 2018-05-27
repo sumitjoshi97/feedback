@@ -37,7 +37,7 @@ const Landing = (props) => {
                 {/* <Link to="/surveys" className="btn-inline">Surveys</Link> */}
             </div>
 
-            <img src={landingImg} alt="landing-image" className="landing-image"/>
+            <img src={landingImg} alt="landing" className="landing-image"/>
 
         </div>
     )

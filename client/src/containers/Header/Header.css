@@ -1,15 +1,16 @@
 .nav {
     position: fixed;
-    width: 79.44vw;
+    width: 80%;
     z-index: 1000;
+    display: block;
 }
 
 .header {
     display: flex;
-    width: inherit;
+    /* width: 100%; */
     background-color: #fff;
-    /* padding: 1rem; */
     font-weight: 700;
+    padding: 0 1rem;
 }
 
 .header-logo {
