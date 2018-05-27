@@ -42,3 +42,9 @@
 .survey__actions a {
     margin-right: 4rem;
 }
+
+@media screen and (max-width: 768px) {
+    .survey {
+        width: 80%;
+    }
+}

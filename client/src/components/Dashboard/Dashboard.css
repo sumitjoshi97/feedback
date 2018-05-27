@@ -20,3 +20,10 @@
     transform: translateY(-4px);
     fill: aqua;
 }
+
+@media screen and (max-width: 768px) {
+    .btn-fixed {
+        bottom:1rem;
+        right: 1rem;
+    }
+}

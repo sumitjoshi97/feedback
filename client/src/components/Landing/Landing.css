@@ -2,10 +2,12 @@
     color: #000;
     padding-top: 15rem;     
     position: relative;
+    height: 100vh;
 }
 
 .landing-content {
     display: inline-block;
+    width: 30%;
     z-index: 10
 }
 
@@ -15,13 +17,11 @@
 }
 
 .landing-content__text {
-    max-width: 77%;
     margin: 1rem;
 }
 
 .landing-content__para {
-    font-size: 2.5rem; 
-    font-weight: 700;   
+    font-size: 2.5rem;   
 }
 
 .landing-content__list {
@@ -38,11 +38,14 @@
 }
 
 .landing-image {
-    max-width: 70%;
+    width:70%;
+    height: auto;
     position: absolute;
     right: 0;
     z-index: -1;
     transform: scaleX(-1);
+    display: inline-block;
+
 }
 
 .btn-inline {
@@ -66,4 +69,44 @@
 
 .btn-inline:focus {
     transform: translateY(2px);
+}
+
+
+@media screen and (max-width: 1440px) {
+    .landing {
+        padding-top: 12rem;
+    }
+
+    .landing-content__heading {
+        font-size: 12rem;
+        padding-top: 3rem;
+    }
+
+}
+
+
+
+@media screen and (max-width: 1024px) {
+
+    .landing-content {
+        width: 100%;
+        text-align: center;     
+    }
+
+    .landing-content__heading {
+        text-align: center;
+    }
+
+    .landing-content__para {
+        font-size: 3.1rem;
+    }
+
+    .landing-content__text {
+        font-size: 2.5rem;
+    }
+    .landing-image {
+        display: none;
+    }
+
+
 }

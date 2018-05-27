@@ -1,5 +1,5 @@
 :root {
-   --base-font: 4rem;
+    --base-font: 4rem;
 }
 
 * {
@@ -16,8 +16,7 @@
 }
 
 html {
-    font-size: 62.5%;  
-    letter-spacing: 1.5;
+    font-size: 62.5%;
 }
 
 body {
@@ -28,7 +27,22 @@ body {
     margin: 0 auto;
 }
 
-::selection{
+::selection {
     background-color: #000;
     color: #fff;
+}
+
+@media screen and (max-width: 1440px) {
+    html {
+        font-size: 50%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    html {
+        font-size: 40%;
+    }
+    body {
+        width: 100%;
+    }
 }

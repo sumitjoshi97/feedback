@@ -63,3 +63,9 @@
 .link:visited {
     color: #000;
 }
+
+@media screen and (max-width: 600px) {
+    .nav {
+        width: 100%;
+    }
+}
