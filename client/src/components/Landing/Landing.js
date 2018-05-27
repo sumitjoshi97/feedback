@@ -34,7 +34,6 @@ const Landing = (props) => {
                 </div>
 
                 {props.auth ? <Link to="/surveys" className="btn-inline">Surveys</Link> : <a className="btn-inline" href="/auth/google">Login</a>}
-                {/* <Link to="/surveys" className="btn-inline">Surveys</Link> */}
             </div>
 
             <img src={landingImg} alt="landing" className="landing-image"/>
