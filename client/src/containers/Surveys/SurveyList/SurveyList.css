@@ -1,23 +1,44 @@
 .surveys-heading {
     font-size: 10rem;
     text-align: center;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
 }
 
-/* .surveyList {
+.surveyList {
     display: flex;
     flex-wrap: wrap;
-} */
+    justify-content: space-evenly;
+    padding: 0 4.5rem;
+}
 
 .survey {
     width: 40%;
     display: inline-block;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
     padding: 2rem;
     border: 1.5px #000 solid;
     border-radius: 10px;
+    transition: transform 0.2s ease-in-out;
+    -webkit-font-smoothing: antialiased;
 }
 
-/* .survey:not(:last-child) {
+.survey:hover {
+    color: #fff;
+    background-color: #000;
+    transform: scale(1.10)
+}
+.survey__heading {
+    font-size: 2.5rem;
+}
+
+.survey__content p::after{
+    content: '';
+    clear: both;
+    display: table;
+}
+.survey__actions {
+    margin-top: 0.8rem;
+}
+.survey__actions a {
     margin-right: 4rem;
-} */
+}
