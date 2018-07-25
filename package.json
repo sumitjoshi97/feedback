@@ -3,12 +3,16 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "engines": {
+    "node": "10.0.0",
+    "npm": "5.6.0"
+  },
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
     "client": "yarn run start --prefix client",
     "dev": "concurrently \"yarn run server\" \"yarn run client\" \"yarn run webhook\"",
-    "webhook": "lt --port 5000 -s sumitasdasdasdaddfrrfcdicss"
+    "webhook": "lt --port 5000 -s dasdaddfrrfassdasdcadefascagtasdzcdicss"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

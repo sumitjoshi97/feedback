@@ -13,7 +13,8 @@ import SurveyNew from './Surveys/SurveyNew/SurveyNew';
 import {connect} from 'react-redux';
 import * as actions from '../store/actions/index';
 
-// const SurveyNew = () => <h2>SurveyNew</h2>;
+import ReallySmoothScroll from 'really-smooth-scroll';
+ReallySmoothScroll.shim();
 
 class App extends Component {
 
@@ -33,9 +34,7 @@ class App extends Component {
                             <Route exact path="/surveys" component={Dashboard}/>
                         </Switch>
                     </div>
-
                 </Router>
-
             </div>
         )
     }
