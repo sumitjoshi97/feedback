@@ -31,14 +31,14 @@ module.exports = app => {
             body,
             recipients: recipients
                 .split(',')
-                .map(email => ({email})),
+                .map(email => ({ email: email.trim() })),
             _user: req.user.id,
             dateSent: Date.now()
         }); 
 
         // send an email!
         const mailer = new Mailer(survey, surveyTemplate(survey));
-        console.log(mailer);
+
         try {
             await mailer.send();
             await survey.save();
@@ -59,36 +59,35 @@ module.exports = app => {
     // webhook route
      app.post('/api/surveys/webhooks', (req, res) => {
 
-         const p = new Path('/api/surveys/:surveyId/:choice');
+        const p = new Path('/api/surveys/:surveyId/:choice');
 
-         const events = _.chain(req.body)
-             .map(({email, url}) => {
-                 match = p.test(new URL(url).pathname);
-                 if (match) {
-                     return {
-                         email,
-                         surveyId: match.surveyId,
-                         choice: match.choice
-                     };
-                 }
-             })
-             .compact()
-             .uniqBy('email', 'surveyId')
-             .each(({email, surveyId, choice}) => {
-                 Survey.updateOne({
-                     _id: surveyId,
-                     recipients: {
-                         $elemMatch: {email, responded: false}
-                     }
-                 },
+        _.chain(req.body)
+            .map(({email, url}) => {
+                const match = p.test(new URL(url).pathname);
+                if (match) {
+                    return {
+                        email,
+                        surveyId: match.surveyId,
+                        choice: match.choice
+                    };
+                }
+            })
+            .compact()
+            .uniqBy('email', 'surveyId')
+            .each(({email, surveyId, choice}) => {
+                Survey.updateOne({
+                    _id: surveyId,
+                    recipients: {
+                        $elemMatch: {email, responded: false}
+                    }
+                },
                 {
                     $inc: { [choice]: 1 },
                     $set: { 'recipients.$.responded': true },
                     lastResponded: new Date()
                 }).exec();
-             })
-             .value();
-
-         res.send({});
-     });
+            })
+            .value();
+        res.send({});
+    });
 }
