@@ -12,7 +12,7 @@
     "server": "nodemon index.js",
     "client": "yarn run start --prefix client",
     "dev": "concurrently \"yarn run server\" \"yarn run client\" \"yarn run webhook\"",
-    "webhook": "lt --port 5000 -s dasdaddfrrfassdasdcadefascagtasdzcdicss",
+    "webhook": "lt --port 5000 -s dasgyjvvxvbuis",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "dependencies": {
