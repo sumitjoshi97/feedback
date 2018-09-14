@@ -8,6 +8,7 @@ import Header from './Header/Header';
 import Landing from '../components/Landing/Landing';
 import Dashboard from '../components/Dashboard/Dashboard';
 import SurveyNew from './Surveys/SurveyNew/SurveyNew';
+import Survey from './Surveys/SurveyList/Survey/Survey';
 
 // import Survey from './Survey';
 import {connect} from 'react-redux';
@@ -31,6 +32,7 @@ class App extends Component {
                         <Switch>
                             <Route exact path="/" component={Landing}/>
                             <Route path="/surveys/new" component={SurveyNew}/>
+                            <Route path="/surveys/survey" component={Survey} />
                             <Route exact path="/surveys" component={Dashboard}/>
                         </Switch>
                     </div>
