@@ -1,5 +1,9 @@
 export {
     fetchApi,
-    submitSurvey,
-    fetchSurveysApi
-} from './userActions';
+    submitSurvey
+} from './user'
+
+export {
+    fetchSurveysApi,
+    setCurrentSurvey
+} from './surveys'
