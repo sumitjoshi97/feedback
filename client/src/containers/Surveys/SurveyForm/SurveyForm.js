@@ -3,15 +3,14 @@ import {reduxForm, Field} from 'redux-form';
 import {Link} from 'react-router-dom';
 import _ from 'lodash';
 
+// importing files
 import SurveyField from '../../../components/SurveyField/SurveyField';
 import validateEmails from '../../../utils/validateEmails';
 import formFields from '../../../utils/formFields';
 
 import './SurveyForm.css';
 
-
 class SurveyForm extends Component {
-
     renderFields = () => {
         return _.map(formFields,({label, name}, index)=> {
             return <Field key={index} component={SurveyField} type="text" label={label} name={name} />

@@ -11,9 +11,6 @@ import * as actions from '../../../store/actions/index';
 import './SurveyFormReview.css';
 
 const SurveyFormReview = (props) => {
-  console.log(props.formValues);
-  console.log(props.history);
-
   const reviewFields = _.map(formFields, ({name, label}) => {
     return (
       <div key={name}>

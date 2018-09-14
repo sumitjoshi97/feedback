@@ -11,9 +11,6 @@ const Dashboard = () => {
             <SurveyList/>
 
             <Link to="/surveys/new" className="btn-fixed">
-                {/* <svg class="side-nav__icon">
-                    {AddSvg}
-                </svg> */}
                 <img src={AddSvg} alt=""/>
             </Link>
         </div>

@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import {connect} from 'react-redux';
 
-import { handleToken } from '../../store/actions/userActions';
+import { handleToken } from '../../store/actions/user';
 
 import './Payments.css';
 
