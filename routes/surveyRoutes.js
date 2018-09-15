@@ -52,13 +52,12 @@ module.exports = app => {
     });
 
     //response get route for survey clicked from mail
-    app.get('/api/surveys/:surveyId/:choice', (req, res) => {
+    app.get('api/surveys/:surveyId/:choice', (req, res) => {
         res.send('Thanks for voting!');
     });
 
     // webhook route
      app.post('/api/surveys/webhooks', (req, res) => {
-         console.info(req.body)
         const p = new Path('/api/surveys/:surveyId/:choice');
 
         _.chain(req.body)
