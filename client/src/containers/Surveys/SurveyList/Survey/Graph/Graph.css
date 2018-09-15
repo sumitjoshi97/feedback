@@ -1,0 +1,15 @@
+.axis {
+    font-size: 1.8rem;
+}
+
+svg text.label {
+    font-size: 1.8rem;
+    text-anchor: middle;
+}
+
+rect {
+    fill: #36f;
+}
+rect:hover {
+    fill: #3f3f3f;
+}

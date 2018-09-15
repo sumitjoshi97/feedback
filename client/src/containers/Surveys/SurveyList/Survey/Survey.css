@@ -1,26 +1,13 @@
 .survey-summary {
     padding-top: 12rem;
-}
-
-.text-primary {
-    font-size: 6rem;
+    margin: 0 2rem;
+    line-height: 5rem;
 }
 
 .text-secondary {
-    font-size: 5rem;
+    font-size: 2.5rem;
+    font-weight: 700;
     display: inline-block;
-}
-
-/* .text-tertiary {
-    font-size: 3rem;
-} */
-
-.survey-body {
-    margin: 2rem 0 4rem 0;
-}
-
-.survey-recipients {
-    /* line-height: 4rem; */
 }
 
 .survey-recipients-list {
@@ -30,14 +17,9 @@
 
 .survey-recipient {
     display: inline-block;
-    margin: 2rem 1rem;
+    line-height: 2rem;
     padding: 0.2rem 0.5rem;
-    font-size: 2.5rem;
     border: 1px solid transparent;
-}
-
-.survey-recipient:first-of-type{
-    margin-left: 0;
 }
 
 .survey-recipient:hover {
@@ -45,9 +27,10 @@
     border-radius: 4px;
 }
 
-.survey-sent {
-    font-size: 2.5rem;
-    margin-bottom: 1.8rem;
+.graph {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    min-width: 250px;
 }
 
 .m-2 {
