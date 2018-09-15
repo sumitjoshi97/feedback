@@ -58,6 +58,7 @@ module.exports = app => {
 
     // webhook route
      app.post('/api/surveys/webhooks', (req, res) => {
+         console.info(req.body)
         const p = new Path('/api/surveys/:surveyId/:choice');
 
         _.chain(req.body)
