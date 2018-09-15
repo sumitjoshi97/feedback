@@ -1,11 +1,11 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import './Landing.css';
 import landingImg from '../../assets/img/feedback-large.jpeg';
 
-const Landing = (props) => {
+const Landing = props => {
 
     return (
         <div className="landing">
@@ -27,23 +27,20 @@ const Landing = (props) => {
                         <li>
                             Check surveys
                         </li>
-                        <li>
-                            Delete surveys
-                        </li>
                     </ul>
                 </div>
 
                 {props.auth ? <Link to="/surveys" className="btn-inline">Surveys</Link> : <a className="btn-inline" href="/auth/google">Login</a>}
             </div>
 
-            <img src={landingImg} alt="landing" className="landing-image"/>
+            <img src={landingImg} alt="landing" className="landing-image" />
 
         </div>
     )
 }
 
 const mapStateToProps = state => {
-    return {auth: state.auth.auth}
+    return { auth: state.auth.auth }
 }
 
 export default connect(mapStateToProps)(Landing);
