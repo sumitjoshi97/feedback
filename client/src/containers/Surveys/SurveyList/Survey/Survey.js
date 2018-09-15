@@ -6,22 +6,20 @@ import Graph from './Graph/Graph'
 
 const Survey = props => (
   !props.currentSurvey ? <Redirect to="/surveys" /> :
-    (<div className="survey-summary">
-      <h1 className="text-primary">
-        <span className="text-secondary m-2">Title</span>{props.currentSurvey.title}
-      </h1>
+    (<div className="survey-summary">      
+        <span className="text-secondary m-2">Survey</span>{props.currentSurvey.title}
 
-      <p className="text-secondary survey-body">
-        {props.currentSurvey.body}
+      <p className="survey-body">
+        <span className="text-secondary m-2">Description</span> {props.currentSurvey.body}
       </p>
 
       <div className="survey-recipients">
-      <h2 className="text-secondary m-2">Recipients </h2>
-      <ul className="survey-recipients-list">
-        {props.currentSurvey.recipients.map(recipient => <li className="survey-recipient">{recipient.email}</li>)}
-      </ul>
+        <h2 className="text-secondary m-2">Recipients </h2>
+        <ul className="survey-recipients-list">
+          {props.currentSurvey.recipients.map(recipient => <li className="survey-recipient">{recipient.email}</li>)}
+        </ul>
       </div>
-      
+
 
       <div className="survey-sent">
         <h2 className="text-secondary m-2">Date sent </h2>
@@ -30,12 +28,12 @@ const Survey = props => (
 
       <div className="survey-response">
         <h2 className="text-secondary">Result</h2>
-        <div> 
-          <Graph yes={props.currentSurvey.yes} no={props.currentSurvey.no}/>
+        <div className="graph">
+          <Graph yes={props.currentSurvey.yes} no={props.currentSurvey.no} />
         </div>
-        
+
       </div>
-      
+
     </div>)
 )
 
