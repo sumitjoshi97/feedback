@@ -2,6 +2,8 @@
 
 Web app to email feedback survey forms
 
+check app demo at __https://emaily-serve.herokuapp.com__
+
 **User stories :** 
 
 * User can signup/ with google
@@ -10,22 +12,40 @@ Web app to email feedback survey forms
 * User can buy credits with card payment
 * User can view his/her previous surveys sent and their response
 
+<br/>
 
 **screenshots :**  
 
->![home page](/screenshots/logged.jpg)<p align="center">home page</p>
+>![home page](/screenshots/logged.jpg)
+
+_home page_
+
+<br/>
 
 >![surveys list](/screenshots/surveys.jpg)
-<p align="center">surveys list</p>
+
+_surveys list_
+
+<br/>
 
 >![survey form](/screenshots/new_survey.jpg)
-<p align="center">survey form</p>
+
+_survey form_
+
+<br/>
 
 >![check survey form before emailing](/screenshots/survey_summary.jpg)
-<p align="center">summary page to check survey form</p>
+
+_summary page to check survey form_
+
+<br/>
 
 >![surveys list with new added survey](/screenshots/new_surveys.jpg)
-<p align="center">surveys list wit new survey added</p>
+
+_survey list with new survey added_
+
+<br/>
 
 >![new survey response](/screenshots/survey.jpg)
-<p align="center">survey response page</p>
+
+_page to check survey response_
