@@ -6,7 +6,7 @@ check app demo at __https://emaily-serve.herokuapp.com__
 
 **User stories :** 
 
-* User can signup/ with google
+* User can signup/login with google
 * User can create a new survey
 * User can email surveys if s/he has credits in account
 * User can buy credits with card payment
